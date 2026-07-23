@@ -1,0 +1,615 @@
+/* ========================================== */
+/* 1. REINICIO Y ESTILOS GLOBALES             */
+/* ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Scroll suave al hacer clic en los enlaces del menú */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #dbeafe;
+    padding-top: 100px; /* Espacio para el navbar fijo */
+    padding-bottom: 50px;
+}
+
+.seccion {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* ========================================== */
+/* 2. ENCABEZADO Y NAVEGACIÓN                 */
+/* ========================================== */
+.navbar {
+    background: #1f2937 !important;
+    padding: 15px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand {
+    color: white !important;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 0 0 5px #00e5ff, 0 0 20px #00e5ff;
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px #00e5ff, 0 0 20px #00e5ff;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #00ffff !important;
+    text-shadow: 0 0 8px #00ffff, 0 0 15px #00ffff, 0 0 30px #00ffff;
+    transform: scale(1.05);
+}
+
+/* ========================================== */
+/* 3. SECCIÓN SOBRE NOSOTROS                  */
+/* ========================================== */
+.nosotros {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 35px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(31, 7, 170, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imagen-nosotros img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #00e5ff;
+}
+
+.nosotros h2 {
+    color: #1f2937;
+    font-size: 32px;
+    margin: 20px 0 15px;
+}
+
+.nosotros p {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.7;
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+/* ========================================== */
+/* 4. MISIÓN Y VISIÓN                         */
+/* ========================================== */
+.mision-vision {
+    max-width: 1200px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.tarjeta {
+    flex: 1;
+    min-width: 300px;
+    background: #ffffff;
+    box-shadow: 0 8px 20px rgba(31, 7, 170, 0.15);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.tarjeta h2 {
+    color: #1f2937;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.tarjeta p {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+/* ========================================== */
+/* 5. PRODUCTOS                               */
+/* ========================================== */
+.contenedor {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.producto {
+    background: white;
+    width: 200px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(31, 7, 170, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+}
+
+.producto img {
+    width: 100%;
+    height: 130px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.producto h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+    color: #1f2937;
+}
+
+.producto p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0d6efd;
+}
+
+/* ========================================== */
+/* 6. SERVICIOS Y TABLA                       */
+/* ========================================== */
+.informacion {
+    background: white;
+    max-width: 900px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(31, 7, 170, 0.15);
+    text-align: left;
+}
+
+.informacion h3 {
+    color: #0d6efd;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.informacion ol,
+.informacion ul {
+    margin-left: 20px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+}
+
+.tabla-productos {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 8px 20px rgba(31, 7, 170, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.tabla-productos th,
+.tabla-productos td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+    font-size: 15px;
+}
+
+.tabla-productos th {
+    background-color: #1f2937;
+    color: white;
+    font-weight: bold;
+}
+
+/* ========================================== */
+/* 7. TESTIMONIOS                             */
+/* ========================================== */
+.titulo-testimonios {
+    font-size: 32px;
+    color: #1f2937;
+    margin-bottom: 10px;
+}
+
+.descripcion-testimonios {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.testimonio {
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(31, 7, 170, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.testimonio:hover {
+    transform: translateY(-5px);
+}
+
+.testimonio img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #00e5ff;
+}
+
+.testimonio h3 {
+    color: #1f2937;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.testimonio p {
+    color: #4b5563;
+    font-size: 15px;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+.estrellas {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #facc15;
+}
+
+/* ========================================== */
+/* 8. ALIADOS ESTRATÉGICOS                    */
+/* ========================================== */
+.aliados {
+    background: #fff;
+}
+
+.aliados h2 {
+    font-size: 28px;
+    color: #1f2937;
+    margin-bottom: 15px;
+}
+
+.aliados p {
+    color: #555;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.aliados-contenedor {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.aliado {
+    width: 180px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.aliado:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.aliado img {
+    width: 100px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.aliado h3 {
+    color: #333;
+    font-size: 18px;
+}
+
+/* ========================================== */
+/* 9. UBICACIÓN Y VIDEO                       */
+/* ========================================== */
+#ubicacion h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#ubicacion p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.contenedor-ubicacion {
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: stretch;
+    padding: 0 20px 20px;
+}
+
+.mapa,
+.video {
+    flex: 1;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.mapa iframe,
+.video iframe {
+    width: 100%;
+    height: 350px;
+    border: none;
+    display: block;
+}
+
+/* ========================================== */
+/* 10. FORMULARIO DE CONTACTO                 */
+/* ========================================== */
+.zona-contacto {
+    min-height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.contenedor-contacto {
+    width: 100%;
+    max-width: 500px;
+}
+
+.tarjeta-formulario {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(31, 7, 170, 0.15);
+}
+
+.tarjeta-formulario h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1f2937;
+    font-size: 28px;
+}
+
+.grupo-campo {
+    margin-bottom: 15px;
+}
+
+.grupo-campo label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #495057;
+    font-size: 15px;
+}
+
+.grupo-campo input,
+.grupo-campo textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 15px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grupo-campo input:focus,
+.grupo-campo textarea:focus {
+    outline: none;
+    border-color: #0d6efd;
+    box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
+}
+
+.btn-enviar {
+    width: 100%;
+    background: #0d6efd;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-enviar:hover {
+    background: #084298;
+}
+
+/* ========================================== */
+/* 11. PIE DE PÁGINA (FOOTER)                 */
+/* ========================================== */
+footer {
+    background: #1f2937;
+    color: white;
+    padding: 40px 20px 20px;
+    width: 100%;
+}
+
+.footer-contenedor {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-seccion {
+    width: 250px;
+}
+
+.footer-seccion h3 {
+    color: #00e5ff;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.footer-seccion p {
+    font-size: 15px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.footer-seccion ul {
+    padding-left: 20px;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+.redes-sociales {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.redes-sociales a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.redes-sociales a:hover {
+    color: #00e5ff;
+    transform: translateX(5px);
+}
+
+.redes-sociales i {
+    font-size: 22px;
+}
+
+.fa-facebook { color: #1877F2; }
+.fa-instagram { color: #E4405F; }
+
+.footer-final {
+    border-top: 1px solid #555;
+    margin-top: 30px;
+    padding-top: 15px;
+    text-align: center;
+}
+
+.footer-final p {
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* ========================================================================== */
+/* 12. DISEÑO RESPONSIVO (OPTIMIZADO PARA CELULARES < 768px)                */
+/* ========================================================================== */
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+        padding-bottom: 30px;
+    }
+    .seccion {
+        padding: 40px 15px;
+    }
+
+    h2 { font-size: 24px !important; }
+    h3 { font-size: 18px !important; }
+    p, li { 
+        font-size: 14px !important; 
+        text-align: left !important;
+    }
+
+    .nosotros, .tarjeta, .informacion, .tarjeta-formulario {
+        padding: 20px 15px;
+        margin: 20px auto;
+    }
+    .imagen-nosotros img {
+        width: 140px;
+        height: 140px;
+        border-width: 4px;
+    }
+
+    .producto {
+        width: 45%;
+        min-width: 140px;
+        padding: 10px;
+    }
+    .producto img { height: 100px; }
+    .producto h3 { font-size: 15px; }
+    .producto p { font-size: 16px; }
+
+    .contenedor-ubicacion {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+    .mapa iframe, .video iframe {
+        height: 250px;
+    }
+
+    .tabla-productos th, .tabla-productos td {
+        font-size: 12px;
+        padding: 8px 4px;
+    }
+
+    footer {
+        padding: 30px 15px 15px;
+    }
+    .footer-contenedor {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+    .footer-seccion {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+    .footer-seccion p, 
+    .footer-seccion ul {
+        text-align: center;
+        font-size: 14px;
+    }
+    .footer-seccion ul {
+        padding-left: 0;
+        list-style-position: inside;
+    }
+    .redes-sociales {
+        align-items: center;
+    }
+    .footer-final p {
+        font-size: 12px;
+        padding: 0 10px;
+        line-height: 1.4;
+    }
+}
